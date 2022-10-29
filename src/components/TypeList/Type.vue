@@ -1,83 +1,34 @@
 <template>
   <router-link
     :to="url"
-    class="capitalize mb-3 py-1 px-3 rounded cursor-pointer"
+    class="type capitalize mb-3 p-4 rounded-xl text-center grid place-content-center place-items-center gap-2 min-w-[120px] min-h-[120px]"
     :class="data.name"
   >
-    {{ data.name }}
+    <img
+      :src="pathIcon(data.name)"
+      :alt="data.name"
+      class="w-8 h-8 md:w-12 md:h-12 lg:w-18 lg:h-18"
+    />
+    <span class="text-white">{{ data.name }}</span>
   </router-link>
 </template>
 
 <script setup>
 import { computed } from "vue";
+
 const props = defineProps({
   data: Object,
 });
 const url = computed(() => "/type/" + props.data.name);
+
+const pathIcon = (type) => {
+  return `/src/assets/icons/${type}.svg`;
+};
 </script>
 
-<style>
-.normal {
-  background-color: beige;
-}
-.fighting {
-  background-color: orangered;
-}
-.flying {
-  background-color: lavender;
-}
-.poison {
-  background-color: blueviolet;
-}
-.ground {
-  background-color: darkkhaki;
-}
-.rock {
-  background-color: brown;
-}
-.bug {
-  background-color: greenyellow;
-}
-.ghost {
-  background-color: darkslateblue;
-}
-.steel {
-  background-color: silver;
-}
-.fire {
-  background-color: red;
-}
-.water {
-  background-color: blue;
-}
-.grass {
-  background-color: green;
-}
-.electric {
-  background-color: yellow;
-}
-.psychic {
-  background-color: pink;
-}
-.ice {
-  background-color: aqua;
-}
-.dragon {
-  background-color: midnightblue;
-  color: white;
-}
-.dark {
-  background-color: black;
-  color: white;
-}
-.fairy {
-  background-color: magenta;
-}
-.unknown {
-  background-color: whitesmoke;
-}
-.shadow {
-  background-color: indigo;
-  color: red;
+<style scoped>
+.type:hover {
+  filter: saturate(200%);
+  cursor: pointer;
 }
 </style>
