@@ -1,5 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import { setColorsVariables } from "./helpers/setTypesColors";
+setColorsVariables();
 </script>
 
 <template>
