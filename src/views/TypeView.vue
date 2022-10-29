@@ -1,42 +1,56 @@
 <template>
-  <div>
+  <main class="container px-4 sm:mx-auto">
     <div v-if="data">
-      <h2>Doble Daño De:</h2>
-      <template v-for="item in data.double_damage_from">
-        <Type :data="item" />
-      </template>
+      <span class="text-lg">Doble Daño De:</span>
+      <LayoutTypes>
+        <template v-for="item in data.double_damage_from">
+          <Type :data="item" />
+        </template>
+      </LayoutTypes>
 
-      <h2>Doble Daño Hacia:</h2>
-      <template v-for="item in data.double_damage_to">
-        <Type :data="item" />
-      </template>
+      <span class="text-lg">Doble Daño Hacia:</span>
+      <LayoutTypes>
+        <template v-for="item in data.double_damage_to">
+          <Type :data="item" />
+        </template>
+      </LayoutTypes>
 
-      <h2>Medio Daño De:</h2>
-      <template v-for="item in data.half_damage_from">
-        <Type :data="item" />
-      </template>
-      <h2>Medio Daño Hacia:</h2>
-      <template v-for="item in data.half_damage_to">
-        <Type :data="item" />
-      </template>
+      <span class="text-lg">Medio Daño De:</span>
+      <LayoutTypes>
+        <template v-for="item in data.half_damage_from">
+          <Type :data="item" />
+        </template>
+      </LayoutTypes>
 
-      <h2>Inmune a:</h2>
-      <template v-for="item in data.no_damage_from">
-        <Type :data="item" />
-      </template>
+      <span class="text-lg">Medio Daño Hacia:</span>
+      <LayoutTypes>
+        <template v-for="item in data.half_damage_to">
+          <Type :data="item" />
+        </template>
+      </LayoutTypes>
 
-      <h2>No le hace daño a:</h2>
-      <template v-for="item in data.no_damage_to">
-        <Type :data="item" />
-      </template>
+      <span class="text-lg">Inmune a:</span>
+      <LayoutTypes>
+        <template v-for="item in data.no_damage_from">
+          <Type :data="item" />
+        </template>
+      </LayoutTypes>
+
+      <span class="text-lg">No le hace daño a:</span>
+      <LayoutTypes>
+        <template v-for="item in data.no_damage_to">
+          <Type :data="item" />
+        </template>
+      </LayoutTypes>
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import Type from "../components/TypeList/Type.vue";
 import { useRoute } from "vue-router";
+import LayoutTypes from "../layouts/LayoutTypes.vue";
 const data = ref(null);
 const route = useRoute();
 try {
