@@ -27,7 +27,7 @@ export const setColorsVariables = () => {
     let sheet = ''
     for (const color in colours) {
         root.style.setProperty(`--${color}`, colours[color]);
-        sheet = sheet + ' ' + `.${color}{ background-color: var(--${color}) }`
+        sheet = sheet + ' ' + `.${color}{ background-color: var(--${color}); box-shadow: 0 0 10px var(--${color})}`
     }
     styleSheet.innerHTML = sheet.toString()
     document.head.appendChild(styleSheet);
