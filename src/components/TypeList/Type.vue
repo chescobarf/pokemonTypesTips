@@ -22,7 +22,7 @@ const props = defineProps({
 const url = computed(() => "/type/" + props.data.name);
 
 const pathIcon = (type) => {
-  return `/src/assets/icons/${type}.svg`;
+  return `./src/assets/icons/${type}.svg`;
 };
 </script>
 
