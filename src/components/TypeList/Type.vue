@@ -27,8 +27,12 @@ const pathIcon = (type) => {
 </script>
 
 <style scoped>
+.type {
+  transition: all ease-in-out 0.3s;
+}
 .type:hover {
   filter: saturate(200%);
   cursor: pointer;
+  scale: 1.05;
 }
 </style>
