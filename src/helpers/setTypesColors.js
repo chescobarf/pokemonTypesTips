@@ -26,7 +26,6 @@ const styleSheet = document.createElement('style');
 export const setColorsVariables = () => {
     let sheet = ''
     for (const color in colours) {
-        console.log(color, colours[color]);
         root.style.setProperty(`--${color}`, colours[color]);
         sheet = sheet + ' ' + `.${color}{ background-color: var(--${color}) }`
     }
