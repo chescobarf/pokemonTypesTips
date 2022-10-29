@@ -6,9 +6,16 @@ setColorsVariables();
 
 <template>
   <header>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
+    <nav class="py-2">
+      <RouterLink to="/" class="cursor-pointer"
+        ><img
+          src="./assets/logo.png"
+          alt="LogoPokemonTypesTips"
+          class="w-96 mx-auto"
+      /></RouterLink>
     </nav>
   </header>
   <RouterView :key="$route.fullPath" />
 </template>
+
+<style></style>
